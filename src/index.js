@@ -12,12 +12,12 @@ app.use(cors())
 app.use(bodyParser.json())
 
 // TODO: Remove this function and actually implement authentication
-app.use('/', (req, res, next) => {
-  req.userId = 'TODO'
-  next()
-})
+// app.use('/', (req, res, next) => {
+//   req.userId = 'TODO'
+//   next()
+// })
 
-app.use('/trails', require('./trails'))
+app.use('/trails', require('./services/trails'))
 
 
 database.sync().then(() => {
@@ -25,3 +25,4 @@ database.sync().then(() => {
     console.log(`Listening on port ${port}`)
   })
 })
+
