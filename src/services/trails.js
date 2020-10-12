@@ -32,4 +32,8 @@ router.get('/', async(req, res, next) => {
   }
 })
 
+router.get('/test', () => {
+  reply.view('index')
+})
+
 module.exports = router
